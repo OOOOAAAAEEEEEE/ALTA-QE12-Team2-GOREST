@@ -7,7 +7,7 @@ import java.io.File;
 
 import starter.utils.Constant;
 
-public class PostValidBodyAPI {
+public class PostAPI {
     public static final String URL_POST_USER = Constant.BASE_URL + "/public/v2/users";
 
     @Step("set body request")
