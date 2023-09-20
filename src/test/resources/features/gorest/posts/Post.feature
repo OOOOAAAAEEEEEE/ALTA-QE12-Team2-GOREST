@@ -8,5 +8,5 @@ Feature: Post Resources endpoint
     And Responses body should be "randomize" as title and "lorem ipsum generator brow waduh hahahaha jiah" as body
     And Validate JSON schema "<jsonSchema>"
     Examples:
-      | path             | pathParam | queryParam | jsonPath              | jsonSchema                     |
-      | /public/v2/posts |           |            | posts/PostMethod.json | posts/PostWithoutAnyError.json |
+      | path             | pathParam | queryParam | jsonPath              | jsonSchema                          |
+      | /public/v2/posts |           |            | posts/PostMethod.json | posts/Post/PostWithoutAnyError.json |
