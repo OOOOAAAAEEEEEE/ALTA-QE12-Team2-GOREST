@@ -1,27 +1,41 @@
 package starter.stepdef;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
-import starter.gorest.SetBaseUrlAndPath;
+import net.serenitybdd.rest.SerenityRest;
 import starter.utils.Constant;
 
 import java.io.File;
 
-import static net.serenitybdd.rest.SerenityRest.*;
-
 public class GeneralMethod {
 
-    @Given("Base URL is base url and path {string}")
+    public String endpoint;
+
+
+    @Given("Base URL and path {string}")
     public void baseURLIsAndSetPath(String path) {
-        SetBaseUrlAndPath.setBaseUrlAndPathMethod(path);
+        endpoint = Constant.BASE_URL+path;
     }
 
-    @Given("Passing {string} into body and set contentType as Json")
+    @Given("Passing {string} as json request into body and set contentType as Json")
     public void passingIntoBodyAndSetContentTypeAsJson(String jsonPath) {
         File jsonFile = new File(Constant.REQ_BODY + jsonPath);
 
-        given().contentType(ContentType.JSON).body(jsonFile);
+        SerenityRest.given()
+            .headers("Authorization", "Bearer " + Constant.TOKEN)
+            .contentType(ContentType.JSON)
+            .body(jsonFile);
     }
 
+    @When("Send request from given endpoint")
+    public void sendRequestFromGivenEndpoint() {
+        SerenityRest.when().post(endpoint);
+    }
 
+    @Then("Status code should be {int}")
+    public void statusCodeShouldBe(int code) {
+        SerenityRest.then().statusCode(code);
+    }
 }
