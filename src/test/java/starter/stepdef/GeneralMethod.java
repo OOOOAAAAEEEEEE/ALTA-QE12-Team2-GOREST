@@ -2,9 +2,11 @@ package starter.stepdef;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
-import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
+import starter.gorest.FetchedDataFromGet;
 import starter.utils.Constant;
 
 import java.io.File;
@@ -33,11 +35,25 @@ public class GeneralMethod {
             .body(jsonFile);
     }
 
+    @When("Fetching data id")
+    public void sendRequestPutMethod() {
+        Response res = SerenityRest
+                .given()
+                .headers("Authorization", "Bearer " + Constant.TOKEN)
+                .when()
+                .get(GeneralMethod.endpoint)
+                .then()
+                .contentType(ContentType.JSON)
+                .extract()
+                .response();
+
+        FetchedDataFromGet.ID_POSTS = res.asString().substring(7,12);
+    }
+
     @Then("Status code should be {int}")
     public void statusCodeShouldBe(int code) {
         SerenityRest.then().statusCode(code);
     }
-
 
 
 //    @And("Validate JSON schema {string}")
