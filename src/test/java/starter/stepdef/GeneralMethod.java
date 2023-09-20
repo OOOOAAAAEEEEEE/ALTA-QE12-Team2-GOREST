@@ -2,7 +2,7 @@ package starter.stepdef;
 
 import io.cucumber.java.en.Given;
 import io.restassured.http.ContentType;
-import starter.gorest.posts.SetBaseUrlAndPath;
+import starter.gorest.SetBaseUrlAndPath;
 import starter.utils.Constant;
 
 import java.io.File;
