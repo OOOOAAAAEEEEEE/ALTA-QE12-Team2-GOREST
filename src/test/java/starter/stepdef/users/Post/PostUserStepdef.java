@@ -39,11 +39,30 @@ public class PostUserStepdef {
                 .body(UserResponses.NAME, equalTo(name))
                 .body(UserResponses.EMAIL, equalTo(email));
     }
-
     @And("Validate JSON schema {string}")
     public void validateJSONSchema(String schemaFile) {
         File json = new File(Constant.JSON_SCHEMA+schemaFile);
         SerenityRest.then()
                 .body(JsonSchemaValidator.matchesJsonSchema(json));
+
     }
+//    SCENARIO 4: Post with invalid body
+    @Given("Post create user with name {string} email {string} gender {string} status {string}")
+    public void postCreateUserWithNameEmailGenderStatus(String name, String email, String gender,String status) {
+        postValidBodyAPI.postWithoutBody(name,email,gender,status);
+    }
+//   SCENARIO 5: Post without Authorization token
+    @Given("Post create user without authorization token with {string}")
+    public void postCreateUserWithoutAuthorizationTokenWith(String bodyFile) {
+        File json = new File(Constant.REQ_BODY+ bodyFile);
+        postValidBodyAPI.postWithoutToken(json);
+    }
+
+    @And("Responses body message should be {string}")
+    public void responsesBodyMessageShouldBe(String message) {
+        SerenityRest.then()
+                .body(UserResponses.MESSAGE, equalTo(message));
+
+    }
+
 }
