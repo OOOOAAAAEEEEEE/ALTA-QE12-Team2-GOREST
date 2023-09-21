@@ -37,4 +37,8 @@ public class PostPostsStepDef {
     }
 
 
+    @And("Responses body should be show error {string} type one")
+    public void responsesBodyShouldBeShowErrorType(String message) {
+        SerenityRest.then().body(PostsResponse.POSTS_MSG_NOT_ARRAY, Matchers.equalTo(message));
+    }
 }

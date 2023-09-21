@@ -1,5 +1,5 @@
 Feature: Posts resources test cases
-  @1.PostPosts
+  @Positive
   Scenario Outline: Post normal flow
     Given Post create user with "<reqBody>"
     When Send request post posts
@@ -8,8 +8,8 @@ Feature: Posts resources test cases
     And Validate JSON Schema "<schema>"
 
     Examples:
-      | code | schema                              | reqBody                       | title              | body                       |
-      | 201  | posts/post/PostWithoutAnyError.json | posts/PostValidBodyValue.json | Dummy Title bruvvv | lorem ipsum dolor sit amet |
+      | code | schema                                        | reqBody                       | title              | body                       |
+      | 201  | posts/Post/PostWithoutAnyErrorJsonSchema.json | posts/PostValidBodyValue.json | Dummy Title bruvvv | lorem ipsum dolor sit amet |
 
   Scenario Outline: Post with invalid body
     Given Post create user with "<reqBody>"
