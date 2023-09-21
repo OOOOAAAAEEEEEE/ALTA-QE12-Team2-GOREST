@@ -1,6 +1,5 @@
 package starter.gorest.users.GetMethod;
 
-//import com.sun.xml.internal.ws.wsdl.writer.document.soap.Body;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import net.serenitybdd.rest.SerenityRest;
