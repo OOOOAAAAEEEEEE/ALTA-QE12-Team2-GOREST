@@ -1,6 +1,5 @@
 package starter.gorest.users.GetMethod;
 
-
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import net.serenitybdd.rest.SerenityRest;
