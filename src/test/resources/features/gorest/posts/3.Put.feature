@@ -15,11 +15,10 @@ Feature: Put resources test cases
     And Validate JSON Schema "<schema>"
 
     Examples:
-      | reqBody                         | code | msg                     | schema                                            |
-      | posts/PutWithoutBodyValue.json  | 400  | can't be blank          | posts/Put/PutUpdateWithoutOneKeyJsonSchema.json   |
-      | posts/PutWithoutTitleValue.json | 400  | can't be blank          | posts/Put/PutUpdateWithoutOneKeyJsonSchema.json   |
-      | posts/PutWithoutAnyValue.json   | 400  | can't be blank          | posts/Put/PutUpdateWithoutAnyValueJsonSchema.json |
-      | posts/PostValidBodyValue.json   | 400  | user_id is not fillable | posts/Post/PostErrorJsonSchema.json               |
+      | reqBody                         | code | msg            | schema                                            |
+      | posts/PutWithoutBodyValue.json  | 400  | can't be blank | posts/Put/PutUpdateWithoutOneKeyJsonSchema.json   |
+      | posts/PutWithoutTitleValue.json | 400  | can't be blank | posts/Put/PutUpdateWithoutOneKeyJsonSchema.json   |
+      | posts/PutWithoutAnyValue.json   | 400  | can't be blank | posts/Put/PutUpdateWithoutAnyValueJsonSchema.json |
 
   Scenario Outline: Put update user with invalid param
     Given Update user with "/posts/PutValidBodyValue.json" as json and "<id>" as id
@@ -46,6 +45,7 @@ Feature: Put resources test cases
     When Send request put posts without id on param
     Then Status code 404
   Examples:
-    | reqBody                          |
-    | posts/PostValidBodyValue.json    |
-    | posts/PostWithManuallyIdSet.json |
+    | reqBody                           |
+    | posts/PostValidBodyValue.json     |
+    | posts/PostWithManuallyIdSet.json  |
+    | posts/PutWithoutPostsIdValue.json |
