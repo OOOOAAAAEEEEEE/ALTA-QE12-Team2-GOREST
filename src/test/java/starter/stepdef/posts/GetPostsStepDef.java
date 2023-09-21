@@ -3,12 +3,9 @@ package starter.stepdef.posts;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
 import starter.gorest.posts.GetAPI;
-import starter.gorest.posts.PostAPI;
 import starter.gorest.posts.PostsResponse;
 
 public class GetPostsStepDef {
@@ -43,5 +40,15 @@ public class GetPostsStepDef {
     @And("Responses body should be {string}")
     public void responsesBodyShouldBe(String msg) {
         SerenityRest.then().body(PostsResponse.POSTS_MSG_NOT_ARRAY, Matchers.equalTo(msg));
+    }
+
+    @Given("Get list posts filter by user_id")
+    public void getListPostsFilterByUser_id() {
+        GetAPI.getListPostFilterByUserId();
+    }
+
+    @When("Send request get list posts by user_id")
+    public void sendRequestGetListPostsByUser_id() {
+        SerenityRest.when().get(GetAPI.GET_POSTS_LIST_BY_USER);
     }
 }
