@@ -1,3 +1,4 @@
+@GOREST
 Feature: Patch resources test cases
   @Positive
   Scenario Outline: Update posts with normal flows
@@ -13,6 +14,7 @@ Feature: Patch resources test cases
       | posts/PutWithoutBodyValue.json  | 200  | Dummy Data without editing body | lorem ipsum dolor sit amet edit the body too     | posts/Put/PutUpdateValidJsonSchema.json |
       | posts/PutWithoutTitleValue.json | 200  | Dummy Data without editing body | lorem ipsum dolor sit amet without editing title | posts/Put/PutUpdateValidJsonSchema.json |
 
+  @Negative
   Scenario Outline: Update posts with invalid body
     Given Update user with "<reqBody>"
     When Send request patch posts
@@ -24,7 +26,7 @@ Feature: Patch resources test cases
       | reqBody                       | code | msg             | schema                                            |
       | posts/PutWithoutAnyValue.json | 204  | No updated data | posts/Put/PutUpdateWithoutAnyValueJsonSchema.json |
 
-
+  @Negative
   Scenario Outline: Patch update user with invalid param
     Given Update user with "/posts/PutValidBodyValue.json" as json and "<id>" as id
     When Send request patch posts with invalid param
@@ -37,7 +39,7 @@ Feature: Patch resources test cases
       | ASDHASD  | Resource not found | posts/Post/PostErrorJsonSchema.json |
       | *@#!(@#* | Resource not found | posts/Post/PostErrorJsonSchema.json |
 
-
+  @Negative
   Scenario: Patch update user without token
     Given Update user with "/posts/PutValidBodyValue.json" without token
     When Send request patch posts
@@ -45,6 +47,7 @@ Feature: Patch resources test cases
     And Responses body should be show error "Authentication failed" type one
     And Validate JSON Schema "posts/Post/PostErrorJsonSchema.json"
 
+  @Negative
   Scenario Outline: Patch update posts with valid body and param included in body
     Given Update user with "<reqBody>"
     When Send request patch posts without id on param

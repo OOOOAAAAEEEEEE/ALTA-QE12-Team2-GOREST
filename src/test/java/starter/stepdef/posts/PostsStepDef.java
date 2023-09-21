@@ -20,7 +20,7 @@ public class PostsStepDef {
 
     @When("Send request post posts")
     public void sendRequestPostPosts() {
-        SerenityRest.when().post(PostsAPI.GET_POSTS_LIST_BY_USER);
+        SerenityRest.when().post(PostsAPI.POST_CREATE_POSTS);
     }
 
 
