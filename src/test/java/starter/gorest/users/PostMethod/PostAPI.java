@@ -12,6 +12,7 @@ import starter.utils.Constant;
 
 
 public class PostAPI {
+    public static int id;
     public static final String URL_POST_USER = Constant.BASE_URL + "/public/v2/users";
 
     @Step("set body request")

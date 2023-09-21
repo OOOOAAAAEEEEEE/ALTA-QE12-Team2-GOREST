@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.gorest.users.PostMethod.PostAPI;
@@ -25,7 +26,8 @@ public class PostUserStepdef {
 
     @When("Send request Create user")
     public void sendRequestCreateUser() {
-        SerenityRest.when().post(PostAPI.URL_POST_USER);
+       Response response = SerenityRest.when().post(PostAPI.URL_POST_USER);
+       PostAPI.id = response.jsonPath().get("id");
     }
 
     @Then("Status code {int}")
@@ -62,7 +64,5 @@ public class PostUserStepdef {
     public void responsesBodyMessageShouldBe(String message) {
         SerenityRest.then()
                 .body(UserResponses.MESSAGE, equalTo(message));
-
     }
-
 }
