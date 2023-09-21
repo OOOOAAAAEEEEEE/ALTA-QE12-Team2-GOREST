@@ -2,13 +2,13 @@ Feature: Get resources test cases
 
   Scenario: Get list posts normal flow
     Given Get list posts
-    When Send request get posts
+    When Send request get list posts
     Then Status code 200
     And Validate JSON Schema "posts/Get/GetListAllOfPostsJsonSchema.json"
 
   Scenario: Get list posts normal flow with query string
-    Given Get list posts with "1" as page and "5" as perpage
-    When Send request get posts
+    Given Get list posts with "1" as page and "1" as perpage
+    When Send request get list posts
     Then Status code 200
     And Validate JSON Schema "posts/Get/GetListAllOfPostsJsonSchema.json"
 

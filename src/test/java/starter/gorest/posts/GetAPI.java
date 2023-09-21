@@ -1,13 +1,16 @@
 package starter.gorest.posts;
 
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import org.junit.Test;
 import starter.utils.Constant;
 
 import java.io.File;
 
 public class GetAPI {
+
     public static final String GET_POSTS_LIST = Constant.BASE_URL + "/public/v2/posts";
 
     public static final String GET_SINGLE_POST = Constant.BASE_URL + "/public/v2/posts/{id}";
@@ -35,5 +38,19 @@ public class GetAPI {
         SerenityRest.given()
                 .pathParam(Constant.ID, id);
     }
+
+    @Step("Get posts id")
+    public static String getPostsId() {
+        String responses = SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constant.TOKEN)
+                .contentType(ContentType.JSON)
+                .queryParam(Constant.PAGE, 1)
+                .queryParam(Constant.PERPAGE, 1)
+                .when().get(GetAPI.GET_POSTS_LIST)
+                .then().extract().response().asString();
+
+        return responses.substring(7, 12);
+    }
+
 
 }

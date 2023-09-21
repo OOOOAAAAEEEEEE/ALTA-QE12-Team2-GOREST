@@ -3,9 +3,12 @@ package starter.stepdef.posts;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
 import starter.gorest.posts.GetAPI;
+import starter.gorest.posts.PostAPI;
 import starter.gorest.posts.PostsResponse;
 
 public class GetPostsStepDef {
@@ -14,9 +17,10 @@ public class GetPostsStepDef {
 
     }
 
-    @When("Send request get posts")
+    @When("Send request get list posts")
     public void sendRequestGetPosts() {
-        SerenityRest.when().get(GetAPI.GET_POSTS_LIST);
+        SerenityRest.given()
+                .get(GetAPI.GET_POSTS_LIST);
     }
 
     @Given("Get list posts with {string} as page and {string} as perpage")
