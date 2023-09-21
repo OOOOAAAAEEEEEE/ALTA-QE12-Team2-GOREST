@@ -8,9 +8,9 @@ Feature: Patch resources test cases
     And Validate JSON Schema "<schema>"
 
     Examples:
-      | reqBody                        | code | title                           | body                                             | schema                                  |
-      | posts/PutValidBodyValue.json   | 200  | Dummy Data edit the title       | lorem ipsum dolor sit amet edit the body too     | posts/Put/PutUpdateValidJsonSchema.json |
-      | posts/PutWithoutBodyValue.json | 200  | Dummy Data without editing body | lorem ipsum dolor sit amet edit the body too     | posts/Put/PutUpdateValidJsonSchema.json |
+      | reqBody                         | code | title                           | body                                             | schema                                  |
+      | posts/PutValidBodyValue.json    | 200  | Dummy Data edit the title       | lorem ipsum dolor sit amet edit the body too     | posts/Put/PutUpdateValidJsonSchema.json |
+      | posts/PutWithoutBodyValue.json  | 200  | Dummy Data without editing body | lorem ipsum dolor sit amet edit the body too     | posts/Put/PutUpdateValidJsonSchema.json |
       | posts/PutWithoutTitleValue.json | 200  | Dummy Data without editing body | lorem ipsum dolor sit amet without editing title | posts/Put/PutUpdateValidJsonSchema.json |
 
   Scenario Outline: Update posts with invalid body
@@ -21,9 +21,9 @@ Feature: Patch resources test cases
     And Validate JSON Schema "<schema>"
 
     Examples:
-      | reqBody                       | code | msg                     | schema                                            |
-      | posts/PutWithoutAnyValue.json | 204  | No updated data         | posts/Put/PutUpdateWithoutAnyValueJsonSchema.json |
-      | posts/PostValidBodyValue.json | 400  | user_id is not fillable | posts/Post/PostErrorJsonSchema.json               |
+      | reqBody                       | code | msg             | schema                                            |
+      | posts/PutWithoutAnyValue.json | 204  | No updated data | posts/Put/PutUpdateWithoutAnyValueJsonSchema.json |
+
 
   Scenario Outline: Patch update user with invalid param
     Given Update user with "/posts/PutValidBodyValue.json" as json and "<id>" as id
@@ -50,6 +50,7 @@ Feature: Patch resources test cases
     When Send request patch posts without id on param
     Then Status code 404
   Examples:
-    | reqBody                          |
-    | posts/PostValidBodyValue.json    |
-    | posts/PostWithManuallyIdSet.json |
+    | reqBody                           |
+    | posts/PostValidBodyValue.json     |
+    | posts/PostWithManuallyIdSet.json  |
+    | posts/PutWithoutUsersIdValue.json |

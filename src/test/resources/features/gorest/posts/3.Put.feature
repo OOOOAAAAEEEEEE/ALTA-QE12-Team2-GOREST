@@ -48,4 +48,4 @@ Feature: Put resources test cases
     | reqBody                           |
     | posts/PostValidBodyValue.json     |
     | posts/PostWithManuallyIdSet.json  |
-    | posts/PutWithoutPostsIdValue.json |
+    | posts/PutWithoutUsersIdValue.json |
