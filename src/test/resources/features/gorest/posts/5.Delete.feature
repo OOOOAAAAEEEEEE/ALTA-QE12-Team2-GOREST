@@ -1,5 +1,5 @@
 @GOREST
-Feature: Delete resources test cases
+Feature: Delete resources "posts" test cases
   @Positive
   Scenario: Delete single valid posts
     Given Delete single posts
