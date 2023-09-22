@@ -1,5 +1,5 @@
 @GOREST
-Feature: GetUser
+Feature: Get resources "users" test cases
 
   @Positive
 #  SCENARIO 1:Get all user

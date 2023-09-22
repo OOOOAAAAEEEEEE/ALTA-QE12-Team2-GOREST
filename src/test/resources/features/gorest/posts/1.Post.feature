@@ -1,5 +1,5 @@
 @GOREST
-Feature: Posts resources test cases
+Feature: Post resources "posts" test cases
 
   @Positive
   Scenario: Post normal flow

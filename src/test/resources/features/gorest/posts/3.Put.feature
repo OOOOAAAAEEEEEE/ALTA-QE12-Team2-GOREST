@@ -1,5 +1,5 @@
 @GOREST
-Feature: Put resources test cases
+Feature: Put resources "posts" test cases
   @Positive
   Scenario: Update posts with normal flows
     Given Update user with "posts/PutValidBodyValue.json"
