@@ -27,7 +27,7 @@ Feature: Put resources "users" test cases
   @Negative
 #  SCENARIO 3:Put user valid id with invalid body
   Scenario Outline:Put user valid id with invalid body
-    Given Put edit user with valid id 5180162 and invalid body name "<name>" email "<email>" gender "<gender>" status "<status>"
+    Given Put edit user with valid id 5186727 and invalid body name "<name>" email "<email>" gender "<gender>" status "<status>"
     When Send request put edit user with static id
     Then Status code 422
     And Validate JSON Schema "users/Put/PutValidIdInvalidBodySchema.json"
