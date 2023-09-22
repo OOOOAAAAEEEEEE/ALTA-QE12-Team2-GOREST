@@ -5,7 +5,7 @@ Feature:
     When Send request patch edit user
     Then Status code 200
     And Validate JSON Schema "users/Patch/PatchValidIdValidBodySchema.json"
-#  SCENARIO 2:Put user with invalid id
+#   SCENARIO 2:Put user with invalid
   Scenario Outline:Patch user invalid id with valid body
     Given Patch edit user with invalid id "<id>" and body "users/Patch/PatchInvalidIdValidBody.json"
     When Send request patch edit user
