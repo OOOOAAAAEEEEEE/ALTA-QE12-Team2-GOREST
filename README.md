@@ -32,6 +32,8 @@ mvn clean verify
 ```
 # Team Member
 
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+
 - [Arif Laksonodhewo](https://www.linkedin.com/in/arif-laksoonodhewo-6a7b21245/)
 - [Binti Naylatul Wafiroh](https://www.linkedin.com/in/nayla-lala-8702b6277)
 
