@@ -12,7 +12,7 @@ Feature: Get resources "users" test cases
   @Positive
 #  SCENARIO 2: Get user detail with valid id
   Scenario: Get user detail with valid id
-    Given Get user with valid id 5186753
+    Given Get user with valid id 5186727
     When Send request Get detail user
     Then Status code 200
     And Validate JSON Schema "users/Get/GetUserWithValidId.json"
@@ -25,12 +25,13 @@ Feature: Get resources "users" test cases
     Then Status code 404
     And Validate JSON Schema "users/Get/GetWithInvalidIdSchema.json"
     Examples:
-      | id            |
-      | ^^$^&*        |
-      | nayla         |
-      | nay@gmail.com |
-      | -4362         |
-    @Positive
+      | id          |
+      | ^^$^&*      |
+      | nayla       |
+      | naygmailcom |
+      | -4362       |
+
+  @Positive
 #     SCENARIO 4:Get all user with valid query param
     Scenario: Get all user with valid query param
     Given Get list user valid query param page <1> per page <3>
