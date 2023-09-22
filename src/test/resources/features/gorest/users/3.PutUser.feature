@@ -1,5 +1,5 @@
 @GOREST
-Feature:
+Feature: Put users
 #  SCENARIO 1:Put user with valid id
   @Positive
   Scenario: Put user valid id with valid body

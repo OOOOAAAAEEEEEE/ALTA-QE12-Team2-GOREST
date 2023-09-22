@@ -1,5 +1,5 @@
 @GOREST
-Feature:
+Feature: Patch users
 #  SCENARIO 1:Put user with valid id
   @Positive
   Scenario: Patch user valid id with valid body
