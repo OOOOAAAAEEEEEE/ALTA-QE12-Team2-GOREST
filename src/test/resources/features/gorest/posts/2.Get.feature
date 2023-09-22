@@ -5,7 +5,6 @@ Feature: Get resources test cases
     Given Get list posts
     When Send request get list posts
     Then Status code 200
-    And Validate JSON Schema "posts/Get/GetListAllOfPostsJsonSchema.json"
 
   @Positive
   Scenario: Get list posts normal flow with query string

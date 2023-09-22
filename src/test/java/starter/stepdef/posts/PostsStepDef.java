@@ -122,7 +122,6 @@ public class PostsStepDef {
 
     @When("Send request put posts")
     public void sendRequestPutPosts() {
-        System.out.println(PostsAPI.PUT_UPDATE_POSTS);
         SerenityRest.when().put(PostsAPI.PUT_UPDATE_POSTS);
     }
 
@@ -180,7 +179,6 @@ public class PostsStepDef {
 
     @When("Send request delete posts")
     public void sendRequestDeletePosts() {
-        System.out.println(PostsAPI.DELETE_POSTS);
         SerenityRest.when().delete(PostsAPI.DELETE_POSTS);
     }
 
