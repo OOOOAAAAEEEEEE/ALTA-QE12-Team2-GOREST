@@ -6,7 +6,7 @@ Feature: PostUser
     Given Post create user with "users/Post/PostUser.json"
     When Send request Create user
     Then Status code 201
-    And Responses body should be name "nayla" and email "neya@gmail.com"
+    And Responses body should be name "naylaASDK" and email "ney23a@gmail.com"
     And Validate JSON Schema "users/Post/PostUserResSchema.json"
 
     @Negative

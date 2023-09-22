@@ -19,7 +19,7 @@ Feature: Patch users
       | id            |
       | -1234         |
       | %&^*^         |
-      | nay@gmail.com |
+      | nayasdgmail23 |
       | nayyyyy       |
 #  SCENARIO 3:Put user valid id with invalid body
   @Negative

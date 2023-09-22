@@ -18,13 +18,13 @@ Feature: Put users
     And Responses body message should be "Resource not found"
     And Validate JSON Schema "users/Put/PutInvalidIdSchema.json"
       Examples:
-        | id            |
-        | -1234         |
-        | %&^*^         |
-        | nay@gmail.com |
-        | nayyyyy       |
+        | id       |
+        | -1234    |
+        | %&^*^    |
+        | nasd24l2 |
+        | nayyyyy  |
 
-    @Negative
+  @Negative
 #  SCENARIO 3:Put user valid id with invalid body
   Scenario Outline:Put user valid id with invalid body
     Given Put edit user with valid id 5180162 and invalid body name "<name>" email "<email>" gender "<gender>" status "<status>"

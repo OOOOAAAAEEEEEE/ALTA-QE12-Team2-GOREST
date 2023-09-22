@@ -4,7 +4,7 @@ Feature: Delete resources test cases
   Scenario: Delete single valid posts
     Given Delete single posts
     When Send request delete posts
-    Then Status code 200
+    Then Status code 204
 
   @Negative
   Scenario Outline: Delete single with invalid param

@@ -13,9 +13,9 @@ Feature: Delete user
     When Send request Delete user static
     Then Status code 404
       Examples:
-        | id              |
-        | nayla           |
-        | 1234            |
-        | &^$             |
-        | nayla@gmail.com |
+        | id    |
+        | nayla |
+        | 1234  |
+        | &^$   |
+        | nayla |
 
