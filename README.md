@@ -18,7 +18,7 @@ QA Automation testing untuk GOREST API yang bertujuan untuk memastikan kualitas 
 
 # Tech stack
 
-![SerenityBDD](https://serenity-bdd.info/wp-content/uploads/elementor/thumbs/serenity-bdd-pac9onzlqv9ebi90cpg4zsqnp28x4trd1adftgkwbq.png) ![RestAssured](https://rest-assured.io/img/logo-transparent.png)
+[![SerenityBDD](https://serenity-bdd.info/wp-content/uploads/elementor/thumbs/serenity-bdd-pac9onzlqv9ebi90cpg4zsqnp28x4trd1adftgkwbq.png)](https://serenity-bdd.github.io/) [![RestAssured](https://rest-assured.io/img/logo-transparent.png)](https://rest-assured.io/)
 
 # Usage
 
