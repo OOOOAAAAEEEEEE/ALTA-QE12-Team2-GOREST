@@ -7,7 +7,7 @@
 
 # Description
 
-###### QA Automation testing untuk GOREST API yang bertujuan untuk memastikan kualitas dari GOREST API. Sebuah RESTful API yang didesain untuk mengatur dan memanipulasi data yang berhubungan dengan users & posts. Projek ini berfokus pada pengembangan dan menjalankan test case yang sudah di automasi untuk memvalidasi functional test.
+QA Automation testing untuk GOREST API yang bertujuan untuk memastikan kualitas dari GOREST API. Sebuah RESTful API yang didesain untuk mengatur dan memanipulasi data yang berhubungan dengan users & posts. Projek ini berfokus pada pengembangan dan menjalankan test case yang sudah di automasi untuk memvalidasi functional test.
 
 # Docs Spreadsheet
 
