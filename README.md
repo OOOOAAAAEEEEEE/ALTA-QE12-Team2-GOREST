@@ -11,7 +11,7 @@ QA Automation testing untuk GOREST API yang bertujuan untuk memastikan kualitas 
 
 # Docs Spreadsheet
 
-[![GoogleSheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1CUu48lJMumlvQ_Cw6Erc6mbWZzSMPJEtJCSKWVn5EY4/edit#gid=478777420)
+[![GoogleSheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1CUu48lJMumlvQ_Cw6Erc6mbWZzSMPJEtJCSKWVn5EY4/edit#gid=478777420) [![WPS SLide](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)](https://sg.docworkspace.com/d/sIJbix4TiAb2Qt6gG) 
 
 # Overall Report!
 
