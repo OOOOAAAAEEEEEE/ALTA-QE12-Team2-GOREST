@@ -9,11 +9,26 @@ import starter.utils.Constant;
 import java.io.File;
 
 public class UsersAPI {
+
+    public static String GET_ID = Constant.BASE_URL+"/public/v2/users?page=1&per_page=1";
+
+    @Step("Get users id")
+    public static String getUsersId() {
+        String responses = SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constant.TOKEN)
+                .contentType(ContentType.JSON)
+                .queryParam(Constant.PAGE, 1)
+                .queryParam(Constant.PERPAGE, 1)
+                .when().get(UsersAPI.GET_ID)
+                .then().extract().response().asString();
+        System.out.println(responses.substring(7,14));
+        return responses.substring(7,14);
+    }
+
     public static String id = getUsersId();
     public static String DELETE_USER = Constant.BASE_URL+"/public/v2/users/{id}";
     public static String DELETE_USER_DYNAMIC = Constant.BASE_URL+"/public/v2/users/"+id;
     public static String GET_USER = Constant.BASE_URL+"/public/v2/users/";
-    public static String GET_ID = Constant.BASE_URL+"/public/v2/users?page=1&per_page=1";
     public static String GET_LIST_USER_WITH_PARAM = Constant.BASE_URL+"/public/v2/users?page={page}&per_page={perpage}";
     public static String GET_DETAIL_USER = Constant.BASE_URL+"/public/v2/users/{id}";
     public static final String PATCH_USER = Constant.BASE_URL+"/public/v2/users/{id}";
@@ -61,18 +76,6 @@ public class UsersAPI {
 
     }
 
-    @Step("Get users id")
-    public static String getUsersId() {
-        String responses = SerenityRest.given()
-                .headers("Authorization", "Bearer " + Constant.TOKEN)
-                .contentType(ContentType.JSON)
-                .queryParam(Constant.PAGE, 1)
-                .queryParam(Constant.PERPAGE, 1)
-                .when().get(UsersAPI.GET_ID)
-                .then().extract().response().asString();
-        System.out.println(responses.substring(7,14));
-        return responses.substring(7,14);
-    }
 //    PATCH METHOD
     @Step("patch valid id")
     public void patchValidId(int id, File json){

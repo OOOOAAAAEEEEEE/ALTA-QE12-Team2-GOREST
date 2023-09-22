@@ -7,7 +7,7 @@ Feature: GetUser
   And Validate JSON Schema "users/Get/GetAllUserSchema.json"
 #  SCENARIO 2: Get user detail with valid id
   Scenario: Get user detail with valid id
-    Given Get user with valid id 5181923
+    Given Get user with valid id 5186753
     When Send request Get detail user
     Then Status code 200
     And Validate JSON Schema "users/Get/GetUserWithValidId.json"
