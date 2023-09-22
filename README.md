@@ -1,4 +1,4 @@
-# Branch latest updated
+# Branch latest update
 
 ##### Master
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/OOOOAAAAEEEEEE/ALTA-QE12-Team2-GOREST/master)](https://github.com/OOOOAAAAEEEEEE/ALTA-QE12-Team2-GOREST/tree/master)
