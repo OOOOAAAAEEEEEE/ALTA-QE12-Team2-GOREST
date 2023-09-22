@@ -24,7 +24,7 @@ Feature: Patch resources "users" test cases
 #  SCENARIO 3:Patch user valid id with invalid body
   @Negative
   Scenario Outline:Patch user valid id with invalid body
-    Given Patch edit user with valid id 5180162 and invalid body name "<name>" email "<email>" gender "<gender>" status "<status>"
+    Given Patch edit user with valid id 5186727 and invalid body name "<name>" email "<email>" gender "<gender>" status "<status>"
     When Send request patch edit user with static id
     Then Status code 422
     And Validate JSON Schema "users/Patch/PatchValidIdInvalidBodySchema.json"
