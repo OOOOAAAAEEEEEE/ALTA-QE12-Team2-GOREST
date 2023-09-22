@@ -1,5 +1,5 @@
 @GOREST
-Feature: Delete user
+Feature: Delete resources "users" test cases
 #  SCENARIO: 1 Delete user with valid id
   Scenario: Delete user with valid id
     Given Delete user with valid id

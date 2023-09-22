@@ -1,5 +1,5 @@
 @GOREST
-Feature: PostUser
+Feature: Post resources "users" test cases
     @Positive
 #   SCENARIO 1:Post with valid input body and valid API token
     Scenario: Post User

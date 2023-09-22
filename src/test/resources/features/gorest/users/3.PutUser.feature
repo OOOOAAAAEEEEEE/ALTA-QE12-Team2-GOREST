@@ -1,5 +1,5 @@
 @GOREST
-Feature: Put users
+Feature: Put resources "users" test cases
 #  SCENARIO 1:Put user with valid id
   @Positive
   Scenario: Put user valid id with valid body

@@ -1,5 +1,5 @@
 @GOREST
-Feature: Patch resources test cases
+Feature: Patch resources "posts" test cases
   @Positive
   Scenario Outline: Update posts with normal flows
     Given Update user with "<reqBody>"

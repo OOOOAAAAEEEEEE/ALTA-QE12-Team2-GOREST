@@ -1,5 +1,5 @@
 @GOREST
-Feature: Get resources test cases
+Feature: Get resources "posts" test cases
   @Positive
   Scenario: Get list posts normal flow
     Given Get list posts
