@@ -40,7 +40,34 @@ public class UsersAPI {
 
 
 
+//    POST METHOD
+    @Step("set body request")
+    public void postCreateUser(File json) {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer "+ Constant.TOKEN)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+    @Step("without body")
+    public void postWithoutBody(String name,String email,String gender,String status){
+        UsersPayload body = new UsersPayload(name, email, gender, status);
+        SerenityRest.given()
+                .headers("Authorization", "Bearer "+ Constant.TOKEN)
+                .contentType(ContentType.JSON)
+                .body(body, ObjectMapperType.GSON);
+    }
+    @Step("set WithoutToken")
+    public void postWithoutToken(File json) {
+        SerenityRest.given()
+                .body(json);
+    }
 
+
+
+
+
+
+//    GET METHOD
     @Step("Get all user")
     public void getAllUser(File json){
         SerenityRest.given()
@@ -48,8 +75,6 @@ public class UsersAPI {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
-
-//    GET METHOD
 
     @Step("Get detail user")
     public void getDetailUser(int id) {
@@ -75,6 +100,10 @@ public class UsersAPI {
                 .pathParam("perpage",perpage);
 
     }
+
+
+
+
 
 //    PATCH METHOD
     @Step("patch valid id")
@@ -120,27 +149,11 @@ public class UsersAPI {
                 .contentType(ContentType.JSON)
                 .body(body, ObjectMapperType.GSON);
     }
-//    POST METHOD
-    @Step("set body request")
-    public void postCreateUser(File json) {
-        SerenityRest.given()
-                .headers("Authorization", "Bearer "+ Constant.TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json);
-    }
-    @Step("without body")
-    public void postWithoutBody(String name,String email,String gender,String status){
-        UsersPayload body = new UsersPayload(name, email, gender, status);
-        SerenityRest.given()
-                .headers("Authorization", "Bearer "+ Constant.TOKEN)
-                .contentType(ContentType.JSON)
-                .body(body, ObjectMapperType.GSON);
-    }
-    @Step("set WithoutToken")
-    public void postWithoutToken(File json) {
-        SerenityRest.given()
-                .body(json);
-    }
+
+
+
+
+
 //    PUT METHOD
     @Step("put valid id")
     public void putValidId(int id,File json){
@@ -178,6 +191,11 @@ public class UsersAPI {
                 .contentType(ContentType.JSON)
                 .body(body, ObjectMapperType.GSON);
     }
+
+
+
+
+
 //    DELETE METHOD
     @Step("Delete valid id")
     public void deleteValidId(){
