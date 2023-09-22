@@ -4,10 +4,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import starter.gorest.users.DeleteMethod.DeleteAPI;
 
 public class DeleteUserStepDef {
-    @Step
+    @Steps
     DeleteAPI deleteAPI;
     @Given("Delete user with valid id")
     public void deleteUserWithValidId(int id) {

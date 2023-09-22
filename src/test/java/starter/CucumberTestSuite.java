@@ -7,10 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        tags = "@Positive",
+        tags = "@GOREST",
         glue = {"starter.stepdef", "starter.utils"},
         plugin = {"pretty"},
         features = "classpath:features"
-
 )
 public class CucumberTestSuite {}

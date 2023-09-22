@@ -1,3 +1,4 @@
+@GOREST
 Feature: Get resources test cases
   @Positive
   Scenario: Get list posts normal flow
@@ -27,6 +28,7 @@ Feature: Get resources test cases
     And Responses body should be "Vel numquam benigne damnatio certe coniuratio." as title and "Certo valetudo thalassinus. Spero torqueo amissio. Auxilium viscus catena. Apparatus laudantium est. Avarus condico astrum. Clarus creo aeneus. Vacuus congregatio desino. Calcar suggero fuga. Curis coma amitto. Teres delinquo utpote. Inflammatio clementia fugiat. Cumque artificiose spargo." as body
     And Validate JSON Schema "posts/Get/GetSingleUserPostsJsonSchema.json"
 
+  @Negative
   Scenario Outline: Get single post with invalid data
     Given  Get single post by id "<id>"
     When Send request get single posts

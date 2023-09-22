@@ -1,3 +1,4 @@
+@GOREST
 Feature: Delete resources test cases
   @Positive
   Scenario: Delete single valid posts
@@ -5,6 +6,7 @@ Feature: Delete resources test cases
     When Send request delete posts
     Then Status code 204
 
+  @Negative
   Scenario Outline: Delete single with invalid param
     Given Delete single posts "<id>" as invalid param
     When Send request delete posts with invalid param
