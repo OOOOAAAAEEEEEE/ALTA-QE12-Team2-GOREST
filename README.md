@@ -13,8 +13,10 @@ QA Automation testing untuk GOREST API yang bertujuan untuk memastikan kualitas 
 
 [![GoogleSheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1CUu48lJMumlvQ_Cw6Erc6mbWZzSMPJEtJCSKWVn5EY4/edit#gid=478777420)
 
-# Image Report Overall (ONPROGRESS)
+# Overall Report!
 
+![Report Test Cases](https://i.ibb.co/5Bb4M3W/Overall-GOREST.png)
+![Report Test Cases2](https://i.ibb.co/zbgH2vY/Overall-GORESTFeature.png)
 
 # Tech stack
 
