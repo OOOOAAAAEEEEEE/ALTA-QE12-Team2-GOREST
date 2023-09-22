@@ -31,7 +31,7 @@ mvn clean verify
 # Team Member
 
 - [Arif Laksonodhewo](https://www.linkedin.com/in/arif-laksoonodhewo-6a7b21245/)
-- [Binti Naylatul Wafiroh](https://www.linkedin.com)
+- [Binti Naylatul Wafiroh](https://www.linkedin.com/in/nayla-lala-8702b6277)
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
